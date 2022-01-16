@@ -54,7 +54,9 @@ export class Widget {
         .then((response) => response.json())
         .then((data) => {
           this.data = {
-            span1: data.contract.symbol,
+            span1:
+              (data.contract || {}).symbol ||
+              (data.nft || {}).metadata.description,
             span2: data.nft.cached_file_url,
           };
           this.initialise();
