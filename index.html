@@ -3,17 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tawk Example</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>NFT Widget Example</title>
     <style></style>
   </head>
   <body>
-    <script src="http://localhost:1234/app.c328ef1a.js"></script>
-    <nft-card
-      contractAddress="0x381748c76f2b8871afbbe4578781cd24df34ae0d"
-      tokenId="3"
-      network="rinkeby"
-    >
-    </nft-card>
-    <script src="https://unpkg.com/embeddable-nfts/dist/nft-card.min.js"></script>
+    <div class="flex flex-col m-10">
+      <span>This below is my widget</span>
+      <div id="nft-container"></div>
+      <script
+        src="http://localhost:1234/app.c328ef1a.js"
+        data-type="user"
+        data-address="0x4ab16a42c6d06aed8bf46911267c40afc37e2270"
+        data-chain="ethereum"
+      ></script>
+      <script
+        src="http://localhost:1234/app.c328ef1a.js"
+        data-type="collection"
+        data-slug="opensea-creature-sale"
+      ></script>
+      <script
+        src="http://localhost:1234/app.c328ef1a.js"
+        data-type="nft"
+        data-address="0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d"
+        data-id="1"
+        data-chain="ethereum"
+      ></script>
+      <script
+        src="http://localhost:1234/app.c328ef1a.js"
+        data-type="auction"
+        data-address="0xabEFBc9fD2F806065b4f3C237d4b59D9A97Bcac7"
+        data-id="4305"
+        data-curator="0x80eb7c1d2Ac1C1D0a4D7c08C1f37836042871FfD"
+      ></script>
+      <span class="mt-10"
+        >This below is the only widget I found provided by Opensea</span
+      >
+      <nft-card
+        contractAddress="0x381748c76f2b8871afbbe4578781cd24df34ae0d"
+        tokenId="3"
+        network="rinkeby"
+      >
+      </nft-card>
+      <script src="https://unpkg.com/embeddable-nfts/dist/nft-card.min.js"></script>
+    </div>
   </body>
 </html>

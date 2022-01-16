@@ -37,7 +37,7 @@ const CollectionForm = ({ setText }) => {
 
   return (
     <div className="flex flex-col mt-5 mb-5">
-      <span className="font-bold">Collecion Slug</span>
+      <span className="font-bold">Collection Slug</span>
       <input
         type="text"
         className="border border-purple-500 rounded-md px-1 py-1 mb-3"
@@ -59,6 +59,7 @@ const CollectionForm = ({ setText }) => {
 const NftForm = ({ setText }) => {
   const address = useRef(null);
   const id = useRef(null);
+  const chain = useRef(null);
 
   return (
     <div className="flex flex-col mt-5 mb-5">
@@ -74,11 +75,17 @@ const NftForm = ({ setText }) => {
         className="border border-purple-500 rounded-md px-1 py-1 mb-3"
         ref={id}
       ></input>
+      <span className="font-bold">Chain</span>
+      <input
+        type="text"
+        className="border border-purple-500 rounded-md px-1 py-1 mb-3"
+        ref={chain}
+      ></input>
       <span
         className="font-bold self-center text-white bg-purple-500 rounded-md px-2 py-1"
         onClick={() =>
           setText(
-            `<script src="http://localhost:1234/app.c328ef1a.js" data-type="nft" data-address="${address.current.value}" data-id="${id.current.value}"></script>`
+            `<script src="http://localhost:1234/app.c328ef1a.js" data-type="nft" data-address="${address.current.value}" data-id="${id.current.value}" data-chain="${chain.current.value}"></script>`
           )
         }
       >
